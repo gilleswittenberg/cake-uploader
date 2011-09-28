@@ -635,7 +635,7 @@ class UploaderComponent extends Object {
 			$ext = $this->_data[$this->_current]['ext'];
 		}
 
-		$name = str_replace('.'. $ext, '', $name);
+		$name = str_ireplace('.'. $ext, '', $name);
 		$name = preg_replace(array('/[^-_.a-zA-Z0-9\s]/i', '/[\s]/'), array('', '_'), $name);
 
 		if (is_numeric($this->maxNameLength) && $truncate) {
